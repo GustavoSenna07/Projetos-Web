@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificador Media</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      align-items: center;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Calcular média</h1>
+  <input type="number" id="numero1" placeholder="Digite a Primeira Nota" />
+  <input type="number" id="numero2" placeholder="Digite a Segunda Nota" />
+  <input type="number" id="numero3" placeholder="Digite a Terceira Nota" />
+
+  
+  <button onclick="verificar()">Verificar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const num1 = parseFloat(document.getElementById("numero1").value);
+      const num2 = parseFloat(document.getElementById("numero2").value);
+      const num3 = parseFloat(document.getElementById("numero3").value);
+      const resultado = document.getElementById("resultado");
+      const media = (num1 + num2 + num3)/3
+
+      if (isNaN(num1 || num2 || num3)) {
+        resultado.textContent = "Por favor, digite um número válido.";
+        return;
+      }
+
+      if (media >= 6) {
+        resultado.textContent = `A média é ${media}, esta aprovado!`;
+      } else {
+        resultado.textContent = `A média ${media}, está reprovado!`;
+      }
+    }
+  </script>
+
+</body>
+</html>
+

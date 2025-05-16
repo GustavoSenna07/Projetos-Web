@@ -1,0 +1,67 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Maior Numero</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px;
+      border: rgb(69, 69, 69);
+    }
+  </style>
+</head>
+<body>
+  <h1>Maior numero de Uma Lista</h1>
+  <input type="string" id="lista" placeholder="Digite Os valores" />
+  <button onclick="adicionar()">Adicionar</button>
+  <button onclick="verificar()">Verificar</button>
+  <p>Numeros: <span id="array"></span></p>
+
+  <div id="resultado"></div>
+
+  <script>
+    const valores = []
+    function adicionar() {
+        const input = document.getElementById("lista");
+        const valor = input.value;
+        
+        if(valor != "") {
+            valores.push(valor)
+            document.getElementById("array").textContent = valores.join(", ")
+            input.value("")
+            input.focus();
+        }
+    }
+    function verificar() {
+      let temp = 0;
+
+      if (!isNaN(valores)) {
+        resultado.textContent = "Por favor, digite os valores!";
+        return;
+      }
+
+      else {
+        for(let i = 0; i < valores.length; i++) {
+            if(temp < valores[i]) {
+                temp = valores[i]
+            }
+        }
+
+        resultado.textContent = "O maior numero é: " + temp;
+      }
+    }
+  </script>
+
+</body>
+</html>

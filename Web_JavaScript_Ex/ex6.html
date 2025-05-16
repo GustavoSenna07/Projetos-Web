@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Inversor de Strings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px;
+      border: rgb(69, 69, 69);
+    }
+  </style>
+</head>
+<body>
+  <h1>Inversor de Palavras</h1>
+  <input type="string" id="palavra" placeholder="Digite uma Palavra" />
+  <button onclick="verificar()">Inverter</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const word = String(document.getElementById("palavra").value);
+      const resultado = document.getElementById("resultado");
+
+      if (!isNaN(word)) {
+        resultado.textContent = "Por favor, digite uma Palavra!";
+        return;
+      }
+
+      else {
+        for(let i = word.length; i > 0; i--) {
+            resultado.textContent += word[i-1];
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

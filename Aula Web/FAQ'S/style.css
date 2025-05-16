@@ -1,0 +1,74 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    background: rgb(196, 154, 235) url("bonitinha.avif") no-repeat left top fixed;
+    background-size: 1980px 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    background-color: aliceblue;
+    border-radius: 5px;
+    height: auto;
+    margin-top: 110px;
+    width: 30%;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+}
+
+.name img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 20px
+}
+
+.name-page {
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace ;
+}
+
+.questions details summary {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:after {
+    align-items: center;
+    background-color: rgb(151, 0, 161);
+    border-radius: 100%;
+    content: "+";
+    color: aliceblue;
+    display: flex;
+    float: left;
+    font-weight: bold;
+    justify-content: center;
+    left: 20px;
+    padding: 0;
+    margin-right: 10px;
+    text-align: center;
+    width: 20px;
+}
+
+details[open] summary::after {
+    background-color: rgb(27, 27, 27);
+    content: "-";
+}
+
+p {
+    margin-left: 40px;
+}
+
+hr {
+    margin-left: 20px;
+    margin-right: 20px;
+}

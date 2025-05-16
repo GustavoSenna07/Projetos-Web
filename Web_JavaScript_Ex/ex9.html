@@ -1,0 +1,61 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title> Sequencia do Fibas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px;
+      border: rgb(69, 69, 69);
+    }
+  </style>
+</head>
+<body>
+  <h1>Sequencia de Fibonacci</h1>
+  <input type="string" id="numero" placeholder="Digite um Numero" />
+  <button onclick="verificar()">Verificar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const input = document.getElementById("numero").value;
+      const number = Number(input);
+      const resultado = document.getElementById("resultado");
+      resultado.textContent = "";
+
+      if (isNaN(number)) {
+        resultado.textContent = "Por favor, digite um número válido.";
+        return;
+      }
+
+      if (!Number.isInteger(number) || number < 0) {
+        resultado.textContent = "Por favor, digite um Número Inteiro Positivo!";
+        return;
+      }
+
+      let currentNumber = 1;
+      let temp = 0;
+      for (let i = 0; i < number; i++) {
+        resultado.textContent += temp + " - ";
+        let nextNumber = currentNumber + temp;
+        temp = currentNumber;
+        currentNumber = nextNumber;
+      }
+    }
+</script>
+
+
+</body>
+</html>

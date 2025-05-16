@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculators</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px;
+      border: rgb(69, 69, 69);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Somadora</h1>
+  <input type="number" id="numero" placeholder="Digite um número" />
+  <button onclick="verificar()">Verificar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    let soma = 0;
+    function verificar() {
+      const num = parseInt(document.getElementById("numero").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(num)) {
+        resultado.textContent = `Digite um numero valido`;
+        return;
+      }
+
+      else {
+        if (num != 0) {
+            soma += num;
+            resultado.textContent += `${num} + `;
+          } 
+        else {
+            resultado.textContent += `= ${soma}`;
+            soma = 0;
+        }
+
+      }
+    }
+  </script>
+
+</body>
+</html>

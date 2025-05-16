@@ -1,0 +1,28 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+}
+
+.separation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-menu {
+    background: url("green-background-hd-wallpapers-pulse-for-your-desktop-free-free-photo.jpg") 
+    no-repeat left fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+.image-menu {
+    background-color: aliceblue;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}

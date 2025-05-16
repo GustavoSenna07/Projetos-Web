@@ -1,0 +1,62 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Numero Primo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px;
+      border: rgb(69, 69, 69);
+    }
+  </style>
+</head>
+<body>
+  <h1>Verificador de Numero Primo</h1>
+  <input type="string" id="numero" placeholder="Digite um Numero Inteiro Positivo" />
+  <button onclick="verificar()">Verificar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const number = parseInt(document.getElementById("numero").value);
+      const resultado = document.getElementById("resultado");
+
+      if (number <= 0) {
+        resultado.textContent = "Por favor, digite um Numero Inteiro Positivo!";
+        return;
+      }
+      else if(number == 1) {
+        resultado.textContent = ("1 não é um numero primo");
+      }
+      else {
+        let temp = 0;
+        for(let i = 2; i < number; i++) {
+            if(number % i == 0) {
+                temp += 1;
+            }
+        }
+
+        if(temp == 0) {
+            resultado.textContent = ("O numero " + number + " é Primo")
+        }
+        else {
+            resultado.textContent = ("O numero " + number + " não é Primo")
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

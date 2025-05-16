@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabuada de Um numero</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px;
+      border: rgb(69, 69, 69);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tabuada de 1 a 10</h1>
+  <input type="number" id="numero" placeholder="Digite um número" />
+  <button onclick="verificar()">Verificar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const num = parseInt(document.getElementById("numero").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(num)) {
+        resultado.textContent = "Por favor, digite um número válido.";
+        return;
+      }
+
+      else {
+        let temp;
+        for(let i = 1; i < 11; i++) {
+            temp = num * i
+            resultado.textContent += `${num} X ${i} = ${temp};\n`;
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
